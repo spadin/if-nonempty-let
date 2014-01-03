@@ -23,4 +23,7 @@
 
   (it "evaluates else body when string is empty"
     (should= :else
-             (if-nonempty-let [x ""] x :else))))
+             (if-nonempty-let [x ""] x :else)))
+
+  (it "throws an error"
+    (should-throw (if-nonempty-let [x 1] x :else))))
